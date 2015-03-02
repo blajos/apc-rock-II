@@ -74,4 +74,3 @@ obj-$(CONFIG_BCMDHD)	+= bcmdhd.1.28.23.x.cn/
 #############################################
 # NMI NMC1XXX
 #############################################
-obj-$(CONFIG_NMC1XXX_WIFI_MODULE) += nmi/
