@@ -1,1 +1,0 @@
-cmd_drivers/net/wireless/eagle/eagle.ko := arm_1103_le-ld -EL -r  -T /home/blajos/work/wm8880/FOSSEE-netbook-kernel-source/scripts/module-common.lds --build-id  -o drivers/net/wireless/eagle/eagle.ko drivers/net/wireless/eagle/eagle.o drivers/net/wireless/eagle/eagle.mod.o

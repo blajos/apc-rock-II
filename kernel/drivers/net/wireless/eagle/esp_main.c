@@ -83,12 +83,17 @@ int esp_pub_init_all(struct esp_pub *epub)
 		if (ret)
 			return ret;
 	} else {
+	  printk("1\n");schedule_timeout(HZ/10000);
 		atomic_set(&epub->sip->state, SIP_PREPARE_BOOT);
+	  printk("2\n");schedule_timeout(HZ/10000);
 		atomic_set(&epub->sip->tx_credits, 0);
+	  printk("3\n");schedule_timeout(HZ/10000);
 	}
 
 #ifndef FPGA_DEBUG
+	  printk("4\n");schedule_timeout(HZ/10000);
         ret = esp_download_fw(epub);
+	  printk("5\n");schedule_timeout(HZ/10000);
 
         if (ret) {
                 esp_dbg(ESP_DBG_ERROR, "download firmware failed\n");

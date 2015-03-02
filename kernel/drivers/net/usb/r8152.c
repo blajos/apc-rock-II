@@ -797,7 +797,7 @@ static netdev_tx_t rtl8152_start_xmit(struct sk_buff *skb,
 	netif_stop_queue(netdev);
 //	len = (skb->len < 60) ? 60 : skb->len;
 	len = skb->len;
-	printk("%s %d skb->data=%p\n",__FUNCTION__,__LINE__,skb->data);
+	//printk("%s %d skb->data=%p\n",__FUNCTION__,__LINE__,skb->data);
 	if (skb_header_cloned(skb) || skb_headroom(skb) < sizeof(*tx_desc) || ((uintptr_t)skb->data & 3)) {
 		struct sk_buff *tx_skb;
 
@@ -809,7 +809,7 @@ static netdev_tx_t rtl8152_start_xmit(struct sk_buff *skb,
 			return NETDEV_TX_OK;
 		}
 		skb = tx_skb;
-	printk("%s %d skb->data=%p\n",__FUNCTION__,__LINE__,skb->data);
+	//printk("%s %d skb->data=%p\n",__FUNCTION__,__LINE__,skb->data);
 	}
 	tx_desc = (TxDesc *)skb_push(skb, sizeof(*tx_desc));
 	memset(tx_desc, 0, sizeof(*tx_desc));
@@ -820,7 +820,7 @@ static netdev_tx_t rtl8152_start_xmit(struct sk_buff *skb,
 #elif LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,36)
 	skb_tx_timestamp(skb);
 #endif
-	printk("%s %d skb->data=%p\n",__FUNCTION__,__LINE__,skb->data);
+	//printk("%s %d skb->data=%p\n",__FUNCTION__,__LINE__,skb->data);
 	usb_fill_bulk_urb(tp->tx_urb, tp->udev, usb_sndbulkpipe(tp->udev, 2),
 			  skb->data, skb->len,
 			  (usb_complete_t)write_bulk_callback, tp);
