@@ -67,6 +67,7 @@ obj-m	+= rtl8188C_8192C/
 obj-m	+= rtl8188EUS_rtl8189ES_linux_v4.1.7_9024.20130916/
 obj-m	+= rtl8723A_WiFi_linux_v4.1.7_7700.20130531_BTCOEX20130528_ver3.3_beta/
 obj-m	+= rtl8723BS_WiFi_linux_v4.2.5_9732.20131128_BTCOEX20131113-473F_beta_for_porting/
+obj-m	+= eagle/
 obj-m	+= bcmdhd.1.28.23.x.cn_ap6330/
 obj-m	+= rtl8189ES_linux_v4.1.8/
 obj-$(CONFIG_BCMDHD)	+= bcmdhd.1.28.23.x.cn/
