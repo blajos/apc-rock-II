@@ -1,4 +1,10 @@
 config WIFI_EAGLE
+      depends on WLAN && MMC
+      select WIRELESS_EXT
+      select WEXT_PRIV
+      select CFG80211
+      select MAC80211
+	  select NL80211_TESTMODE
 	tristate "eagle wifi support"
 	default m
 	

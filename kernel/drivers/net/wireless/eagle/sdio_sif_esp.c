@@ -819,7 +819,7 @@ static int __init esp_sdio_init(void)
 #define ESP_WAIT_UP_TIME_MS 3000
         int err;
         u64 ver;
-        int retry = 0;//mod from 3 to 0 to reduce detect time.
+        int retry = 3;
         bool powerup = false;
         int edf_ret = 0;
 
